@@ -12,7 +12,7 @@ const user ={
 
 const MongoClient = require('mongodb').MongoClient;
 const dbUrl = 'mongodb+srv://admin:24320124@herokuapp-ohvst.mongodb.net/test?retryWrites=true'
-const dbname = 'prototypeDB';
+const dbName = 'prototypeDB';
 
 app.get('/', (req,res)=>{
     (async function mongo(){
