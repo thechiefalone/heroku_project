@@ -29,6 +29,21 @@ app.get('/', (req,res)=>{
     }());
 });
 
+app.get('/show', (req,res)=>{
+    (async function mongo(){
+        let client;
+        try{
+            client = await MongoClient.connect(dbUrl, {useNewUrlParser: true});
+            const db = clientdb(dbName);
+            const col = await db.collection('users');
+            const users = col.find().toArray();
+            res.json(users);
+        }catch(error){
+            res.send(error.message);
+        }
+    })
+})
+
 
 app.listen(port,()=>{
     console.log(`App is listening on ${port}!`);
