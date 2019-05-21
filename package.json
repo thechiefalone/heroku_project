@@ -24,5 +24,8 @@
   "dependencies": {
     "express": "^4.17.0",
     "mongodb": "^3.2.5"
+  },
+  "devDependencies": {
+    "eslint": "^5.16.0"
   }
 }
