@@ -11,8 +11,10 @@ app.set('views', path.join(__dirname, './src/views'));
 app.use(express.static(path.join(__dirname, '/public')));
 
 const pageRoutes = require('./src/routes/pageRoutes');
+const adminRoute = require('./src/routes/adminRoute');
 
 app.use('/',pageRoutes);
+app.use('/admin',adminRoute);
 
 
 
