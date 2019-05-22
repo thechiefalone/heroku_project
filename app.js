@@ -10,27 +10,16 @@ app.set('views', path.join(__dirname, './src/views'));
 
 app.use(express.static(path.join(__dirname, '/public')));
 
-app.get('/', (req,res)=>{
-res.render('index');
-});
+const pageRoutes = require('./src/routes/pageRoutes');
 
-const aboutRoute = require('./src/routes/aboutRoute');
-app.use('/about',aboutRoute);
-
-const blogRoute = require('./src/routes/blogRoute');
-app.use('/blog',blogRoute);
-
-const contactRoute = require('./src/routes/contactRoute');
-app.use('/contact',contactRoute);
-
-const listingsSingleRoute = require('./src/routes/listingsSingleRoute');
-app.use('/listings-single',listingsSingleRoute);
-
-const registerRoute = require('./src/routes/registerRoute');
-app.use('/register',registerRoute);
-
-const loginRoute = require('./src/routes/loginRoute');
-app.use('/login',loginRoute);
+app.use('/',pageRoutes);
+app.use('/about',pageRoutes);
+app.use('/blog',pageRoutes);
+app.use('/contact',pageRoutes);
+app.use('/listings-single',pageRoutes);
+app.use('/listings',pageRoutes);
+app.use('/register',pageRoutes);
+app.use('/login',pageRoutes);
 
 
 
