@@ -2,7 +2,7 @@ const express = require('express');
 const adminRoute = express.Router();
 const { MongoClient } = require('mongodb');
 
-//const dbUrl = 'mongodb+srv://lion:jeny@cluster0-rmrmn.mongodb.net/test?retryWrites=true';
+//const dbUrl = 'mongodb+srv://admin:24320124@herokuapp-ohvst.mongodb.net/test?retryWrites=true'
 const dbUrl = 'mongodb://localhost:27017';
 const dbName ='herokuwebDB';
 
