@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient;
 //const dbUrl = 'mongodb+srv://admin:24320124@herokuapp-ohvst.mongodb.net/test?retryWrites=true'
 const dbUrl = 'mongodb://localhost:27017';
-const dbName = 'prototypeDB';
+const dbName = 'herokuwebDB';
 function checkUserName(userName , done) {
     (async function mongo() {
         let client;

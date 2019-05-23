@@ -14,10 +14,12 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 const pageRoutes = require('./src/routes/pageRoutes');
 const adminRoute = require('./src/routes/adminRoute');
+const authRoutes = require('./src/routes/authRoutes');
 
 app.use('/',pageRoutes);
 app.use('/admin',adminRoute);
 app.use('/admin/register',adminRoute);
+app.use('/auth',authRoutes );
 
 
 
