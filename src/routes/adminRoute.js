@@ -10,6 +10,10 @@ adminRoute.route('/').get((req,res)=>{
     res.render('admin');
 })
 
+adminRoute.route('/').post((req,res)=>{
+    res.render('adminArea');
+})
+
 adminRoute.route('/register').get((req,res)=>{
     res.render('adminRegister');
 })
