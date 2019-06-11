@@ -21,14 +21,6 @@ pageRoutes.route('/listings').get((req,res)=>{
     res.render('listings');
 })
 
-pageRoutes.route('/login').get((req,res)=>{
-    res.render('login');
-})
-
-pageRoutes.route('/register').get((req,res)=>{
-    res.render('register');
-})
-
 pageRoutes.route('/').get((req,res)=>{
     res.render('index');
 })

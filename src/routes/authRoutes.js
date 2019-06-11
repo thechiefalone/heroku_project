@@ -9,10 +9,16 @@ const dbName ='herokuwebDB';
 
 const authRoutes = express.Router();
 
-authRoutes.route('/admin/register').get((req, res) => {
-    res.render('adminRegister' ,{ userExist: false });
-});
-authRoutes.route('/admin').post((req, res) => {
+
+authRoutes.route('/login').get((req,res)=>{
+    res.render('login');
+})
+
+authRoutes.route('/register').get((req,res)=>{
+  res.render('register' ,{ userExist: false });
+})
+
+authRoutes.route('/auth').post((req, res) => {
     authControllers.addUser(req.body.email, req.body.password, (check)=>{
         if(check){
             res.redirect('adminArea');
@@ -20,9 +26,9 @@ authRoutes.route('/admin').post((req, res) => {
             res.render('adminRegister',{ userExist: true });
         }
     });
-    
-    
-    
+
+
+
 });
 authRoutes.route('/login').get((req, res)=>{
 res.render('login');
