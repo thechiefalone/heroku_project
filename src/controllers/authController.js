@@ -6,7 +6,7 @@ const {
 const dbUrl = 'mongodb://localhost:27017';
 const dbName = 'herokuwebDB';
 
-function checkuser(email) {
+function checkuser(email, done) {
     (async function mongo() {
         let client;
         try {
@@ -19,11 +19,11 @@ function checkuser(email) {
                 username: email
             });
             client.close();
-            return user;
+            done( user);
         } catch (error) {
             console.log(error.message);
             client.close();
-            return null;
+            done(null);
         }
 
     }());
@@ -53,7 +53,6 @@ function addUser(email, password, callback) {
                 callback(true);
             }
         } catch (error) {
-            console.log(error.message);
             client.close();
             callback(false);
         }
