@@ -13,7 +13,6 @@ function checkUserName(userName , done) {
             const col = await db.collection('users');
             const user = await col.findOne({username: userName});
             client.close();
-            console.log(user);
             if(user){
                 done(false);
             }else{

@@ -17,8 +17,7 @@ const adminRoute = require('./src/routes/adminRoute');
 const authRoutes = require('./src/routes/authRoutes');
 
 app.use('/',pageRoutes);
-app.use('/admin',adminRoute);
-app.use('/admin/register',adminRoute);
+app.use('/register',adminRoute);
 app.use('/auth',authRoutes );
 
 

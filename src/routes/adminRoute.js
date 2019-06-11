@@ -2,6 +2,7 @@ const express = require('express');
 const adminRoute = express.Router();
 const { MongoClient } = require('mongodb');
 
+
 //const dbUrl = 'mongodb+srv://admin:24320124@herokuapp-ohvst.mongodb.net/test?retryWrites=true'
 const dbUrl = 'mongodb://localhost:27017';
 const dbName ='herokuwebDB';
@@ -10,15 +11,7 @@ adminRoute.route('/').get((req,res)=>{
     res.render('admin');
 })
 
-adminRoute.route('/').post((req,res)=>{
-    res.render('adminArea');
-})
-
-adminRoute.route('/register').get((req,res)=>{
-    res.render('adminRegister');
-})
-
-adminRoute.route('/register').post((req, res) => {
+adminRoute.route('/').post((req, res) => {
     
     (async function mongo(){
         let client;

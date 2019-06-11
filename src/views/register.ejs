@@ -35,20 +35,20 @@
 
 
 
-          <form action="#" class="p-5 bg-white">
+          <form action="/register" method="POST" class="p-5 bg-white">
 
             <div class="row form-group">
 
               <div class="col-md-12">
                 <label class="text-black" for="email">Email</label>
-                <input type="email" id="email" class="form-control">
+                <input type="email" id="email" name="email" class="form-control">
               </div>
             </div>
 
             <div class="row form-group">
               <div class="col-md-12">
                 <label class="text-black" for="subject">Password</label>
-                <input type="password" id="subject" class="form-control">
+                <input type="password" id="subject" name="password" class="form-control">
               </div>
             </div>
 
@@ -62,7 +62,6 @@
             <div class="row form-group">
               <div class="col-12">
                 <p>Have an account? <a href="login">Log In</a></p>
-                <p><a href="admin">Are you Admin?</a></p>
               </div>
             </div>
 
