@@ -33,5 +33,13 @@ adminRoute.route('/').post((req, res) => {
 
 });
 
+adminRoute.route('/changePassword').get((req,res)=>{
+  res.render('changePassword');
+})
+
+adminRoute.route('/addNew').get((req,res)=>{
+  res.render('addNew');
+})
+
 
 module.exports=adminRoute;
