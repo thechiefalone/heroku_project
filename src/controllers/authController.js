@@ -6,7 +6,7 @@ const {
 const dbUrl = 'mongodb://localhost:27017';
 const dbName = 'herokuwebDB';
 
-function checkuser(email, done) {
+function checkUser(email,password, done) {
     (async function mongo() {
         let client;
         try {
@@ -16,7 +16,8 @@ function checkuser(email, done) {
             const db = client.db(dbName);
             const col = await db.collection('users');
             const user = await col.findOne({
-                username: email
+                username: email,
+                password: password
             });
             client.close();
             done( user);
@@ -62,6 +63,6 @@ function addUser(email, password, callback) {
 
 
 module.exports = {
-    checkuser,
+    checkUser,
     addUser
 };

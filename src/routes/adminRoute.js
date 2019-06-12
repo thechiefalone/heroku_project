@@ -7,6 +7,10 @@ const authControllers = require('../controllers/authController');
 const dbUrl = 'mongodb://localhost:27017';
 const dbName ='herokuwebDB';
 
+adminRoute.route('/').get((req,res)=>{
+  res.render('admin');
+})
+
 adminRoute.route('/').post((req, res) => {
     authControllers.checkuser(req.body.email,(result)=>{
         if(!result){
@@ -26,7 +30,7 @@ adminRoute.route('/').post((req, res) => {
         res.send('sorry user is exist')
     }
     });
-    
+
 });
 
 

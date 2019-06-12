@@ -1,8 +1,16 @@
 const express = require('express');
 const path = require('path');
 const app = express();
+const session = require('express-session');
+
 
 const port = process.env.PORT || 3000;
+
+app.use(session({
+    secret: "classyadd",
+    resave: false,
+    saveUninitialized: true
+}));
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -17,7 +25,7 @@ const adminRoute = require('./src/routes/adminRoute');
 const authRoutes = require('./src/routes/authRoutes');
 
 app.use('/',pageRoutes);
-app.use('/register',adminRoute);
+app.use('/admin',adminRoute);
 app.use('/auth',authRoutes );
 
 
